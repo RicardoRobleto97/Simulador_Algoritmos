@@ -41,24 +41,79 @@ namespace Test_Algoritmos
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            try
+            {
 
+               dgvEntrada.DataSource = con.GetPROCESS();
+
+                pnlPriority.Hide();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
         private void pnlPriority_Paint(object sender, PaintEventArgs e)
         {
+            
+        }
+
+
+       
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
 
-        private void btnEjecutar_Click(object sender, EventArgs e)
-        {
-            algoritmos.Prioridad(int.Parse(txtQuantum.Text));
 
+        private void alg_prioridad_Click(object sender, EventArgs e)
+        {
+            
+            pnlPriority.Show();
+           // pnlCPU.Hide();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btn_prioridad_Click(object sender, EventArgs e)
         {
+            if (txtQuantum.Text=="")
+            {
+                MessageBox.Show("Necesita digitar Quantum en este algoritmo");
 
+            }
+            else
+            {
+                algoritmos.Prioridad(int.Parse(txtQuantum.Text));
+            }
+            
+        }
+
+        private void algCPU_Click(object sender, EventArgs e)
+        {
+            
+            //pnlPriority.Hide();
+            
+        }
+
+        private void bntCPU_Click(object sender, EventArgs e)
+        {
+            if (txtQuantumCPU.Text == "")
+            {
+                MessageBox.Show("Necesita digitar Quantum en este algoritmo");
+
+            }
+            else
+            {
+                algoritmos.CPU(int.Parse(txtQuantumCPU.Text));
+            }
+        }
+
+        private void btn_RR_Click(object sender, EventArgs e)
+        {
+            pnlCPU.Show();
+            //pnlPriority.Hide();
         }
     }
 }

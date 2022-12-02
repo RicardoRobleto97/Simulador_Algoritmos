@@ -87,6 +87,97 @@ namespace Test_Algoritmos
                         finIteraciones = false;
             }
         }
+        internal  void CPU(int Quantum)
+        {
+            int quantum = Quantum, pos = 0;
+            bool finIteraciones = false, turno = true; //turno = true, 1er elemento, turno = false, 2do elementa
+
+            for (int j = 0; j <= lista.Count - 2; j++)
+            {
+                for (int i = 0; i <= lista.Count - 2; i++)
+                {
+                    if (lista[i].CPU > lista[i + 1].CPU)
+                    {
+                        PROCESS temp = lista[i + 1];
+                        lista[i + 1] = lista[i];
+                        lista[i] = temp;
+                    }
+                }
+            }
+
+            while (!finIteraciones)
+            {
+
+                if (pos < lista.Count)
+                {
+                    for (int i = 0; i < lista.Count; i++)
+                    {
+                        if (lista[pos].CPU == 0)
+                            pos++;
+                        else
+                            break;
+                    }
+
+
+                    if (lista[pos].CPU > quantum)
+                    {
+                        Console.WriteLine("Proceso en listo");
+                        Console.WriteLine("En ejecucion proceso: " + lista[pos].Nombre);
+                        lista[pos].CPU=(lista[pos].CPU - quantum);
+                        if (lista[pos].CPU > quantum)
+                            Console.WriteLine("El proceso pasa a bloqueo");
+                    }
+                    else if (lista[pos].CPU <= quantum)
+                    {
+                        Console.WriteLine("Proceso en listo");
+                        Console.WriteLine("En ejecucion: " + lista[pos].Nombre);
+                        lista[pos].CPU=0;
+                        Console.WriteLine("Proceso terminado");
+                    }
+
+                    if (turno)
+                    {
+                        pos++;
+                        turno = false;
+                    }
+                    else
+                    {
+                        pos--;
+                        turno = true;
+                    }
+
+                    finIteraciones = true;
+
+                    for (int i = 0; i < lista.Count; i++)
+                    {
+                        if (lista[i].CPU > 0)
+                            finIteraciones = false;
+                    }
+                }
+                if (pos == lista.Count)
+                    break;
+            }
+
+            pos--;
+            while (lista[pos].CPU > 0)
+            {
+                if (lista[pos].CPU > quantum)
+                {
+                    Console.WriteLine("Proceso en listo");
+                    Console.WriteLine("En ejecucion proceso: " + lista[pos].Nombre);
+                    lista[pos].CPU=(lista[pos].CPU - quantum);
+                    if (lista[pos].CPU > quantum)
+                        Console.WriteLine("El proceso pasa a bloqueo");
+                }
+                else if (lista[pos].CPU <= quantum)
+                {
+                    Console.WriteLine("Proceso en listo");
+                    Console.WriteLine("En ejecucion: " + lista[pos].Nombre);
+                    lista[pos].CPU=0;
+                    Console.WriteLine("Proceso terminado");
+                }
+            }
+        }
 
     }
 }
