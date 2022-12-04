@@ -45,8 +45,8 @@ namespace Test_Algoritmos
             {
 
                dgvEntrada.DataSource = con.GetPROCESS();
-
-                pnlPriority.Hide();
+               // pnlPared.Visible = true;
+                //pnlPriority.Hide();
             }
             catch (Exception ex)
             {
@@ -71,9 +71,12 @@ namespace Test_Algoritmos
 
         private void alg_prioridad_Click(object sender, EventArgs e)
         {
+            //pnlPared.Visible = false;
+            pnlCPU.Visible = false;
+            RRPnl.Visible = false;
+            pnlPriority.Visible = true;
+            dgvPrioridadResult.DataSource = con.GetPROCESS();
             
-            pnlPriority.Show();
-           // pnlCPU.Hide();
         }
 
         private void btn_prioridad_Click(object sender, EventArgs e)
@@ -86,15 +89,20 @@ namespace Test_Algoritmos
             else
             {
                 algoritmos.Prioridad(int.Parse(txtQuantum.Text));
+                dgvPrioridadResult.DataSource = algoritmos.GetLista();
             }
+
+
             
         }
 
         private void algCPU_Click(object sender, EventArgs e)
         {
-            
-            //pnlPriority.Hide();
-            
+            //pnlPared.Visible = false;
+            pnlPriority.Visible = false;
+            pnlCPU.Visible = true;
+            RRPnl.Visible = false;
+            dgvCPU.DataSource = con.GetPROCESS();
         }
 
         private void bntCPU_Click(object sender, EventArgs e)
@@ -106,13 +114,20 @@ namespace Test_Algoritmos
             }
             else
             {
-                algoritmos.CPU(int.Parse(txtQuantumCPU.Text));
+                 algoritmos.CPU(int.Parse(txtQuantumCPU.Text));
+                dgvCPU.DataSource = algoritmos.GetLista();
             }
+            algoritmos.ProcMasCortoContinuacion();
+            //algoritmos.RoundRobin(int.Parse(txtQuantumCPU.Text));
+            dgvCPU.DataSource = algoritmos.GetLista();
         }
 
         private void btn_RR_Click(object sender, EventArgs e)
         {
-            pnlCPU.Show();
+            //pnlPared.Visible = false;
+            pnlPriority.Visible = false;
+            pnlCPU.Visible = false;
+            RRPnl.Visible = true;   
             //pnlPriority.Hide();
         }
     }

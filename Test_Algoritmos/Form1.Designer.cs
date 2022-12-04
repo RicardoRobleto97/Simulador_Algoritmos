@@ -45,25 +45,31 @@
             this.pnlPriority = new System.Windows.Forms.Panel();
             this.btn_prioridad = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvPrioridadResult = new System.Windows.Forms.DataGridView();
             this.pnlCPU = new System.Windows.Forms.Panel();
+            this.RRPnl = new System.Windows.Forms.Panel();
             this.bntCPU = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvCPU = new System.Windows.Forms.DataGridView();
             this.txtQuantumCPU = new System.Windows.Forms.TextBox();
             this.dgvEntrada = new System.Windows.Forms.DataGridView();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.label3 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pnlProcesoMasCorto = new System.Windows.Forms.Panel();
+            this.dgvProcCorto = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             label1 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.pnlPriority.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPrioridadResult)).BeginInit();
             this.pnlCPU.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCPU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntrada)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.pnlProcesoMasCorto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProcCorto)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -98,12 +104,12 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(268, 866);
+            this.panel1.Size = new System.Drawing.Size(268, 1036);
             this.panel1.TabIndex = 5;
             // 
             // btn_RR
             // 
-            this.btn_RR.Location = new System.Drawing.Point(68, 320);
+            this.btn_RR.Location = new System.Drawing.Point(64, 287);
             this.btn_RR.Name = "btn_RR";
             this.btn_RR.Size = new System.Drawing.Size(113, 51);
             this.btn_RR.TabIndex = 23;
@@ -168,7 +174,7 @@
             this.procesosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(268, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(972, 35);
+            this.menuStrip1.Size = new System.Drawing.Size(1759, 35);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -217,13 +223,12 @@
             // 
             this.pnlPriority.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(115)))));
             this.pnlPriority.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlPriority.Controls.Add(this.pnlCPU);
             this.pnlPriority.Controls.Add(this.btn_prioridad);
             this.pnlPriority.Controls.Add(this.label4);
             this.pnlPriority.Controls.Add(label1);
-            this.pnlPriority.Controls.Add(this.dataGridView2);
+            this.pnlPriority.Controls.Add(this.dgvPrioridadResult);
             this.pnlPriority.Controls.Add(this.txtQuantum);
-            this.pnlPriority.Location = new System.Drawing.Point(274, 392);
+            this.pnlPriority.Location = new System.Drawing.Point(1125, 21);
             this.pnlPriority.Name = "pnlPriority";
             this.pnlPriority.Size = new System.Drawing.Size(972, 443);
             this.pnlPriority.TabIndex = 10;
@@ -259,29 +264,38 @@
             this.label4.Text = "Tabla Resultado Prioridad";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dataGridView2
+            // dgvPrioridadResult
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(111, 136);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(735, 256);
-            this.dataGridView2.TabIndex = 11;
+            this.dgvPrioridadResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPrioridadResult.Location = new System.Drawing.Point(111, 76);
+            this.dgvPrioridadResult.Name = "dgvPrioridadResult";
+            this.dgvPrioridadResult.RowHeadersWidth = 51;
+            this.dgvPrioridadResult.RowTemplate.Height = 24;
+            this.dgvPrioridadResult.Size = new System.Drawing.Size(807, 353);
+            this.dgvPrioridadResult.TabIndex = 11;
             // 
             // pnlCPU
             // 
             this.pnlCPU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(115)))));
             this.pnlCPU.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlCPU.Controls.Add(this.RRPnl);
             this.pnlCPU.Controls.Add(this.bntCPU);
             this.pnlCPU.Controls.Add(this.label5);
             this.pnlCPU.Controls.Add(label6);
-            this.pnlCPU.Controls.Add(this.dataGridView1);
+            this.pnlCPU.Controls.Add(this.dgvCPU);
             this.pnlCPU.Controls.Add(this.txtQuantumCPU);
-            this.pnlCPU.Location = new System.Drawing.Point(21, 108);
+            this.pnlCPU.Location = new System.Drawing.Point(289, 438);
             this.pnlCPU.Name = "pnlCPU";
             this.pnlCPU.Size = new System.Drawing.Size(972, 443);
             this.pnlCPU.TabIndex = 24;
+            // 
+            // RRPnl
+            // 
+            this.RRPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.RRPnl.Location = new System.Drawing.Point(3, 446);
+            this.RRPnl.Name = "RRPnl";
+            this.RRPnl.Size = new System.Drawing.Size(969, 437);
+            this.RRPnl.TabIndex = 24;
             // 
             // bntCPU
             // 
@@ -293,7 +307,7 @@
             this.bntCPU.FlatAppearance.BorderSize = 1000;
             this.bntCPU.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.bntCPU.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(135)))), ((int)(((byte)(80)))));
-            this.bntCPU.Location = new System.Drawing.Point(842, 18);
+            this.bntCPU.Location = new System.Drawing.Point(836, 13);
             this.bntCPU.Name = "bntCPU";
             this.bntCPU.Size = new System.Drawing.Size(118, 50);
             this.bntCPU.TabIndex = 22;
@@ -313,15 +327,15 @@
             this.label5.Text = "Tabla Resultado CPU";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dataGridView1
+            // dgvCPU
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(111, 136);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(735, 256);
-            this.dataGridView1.TabIndex = 11;
+            this.dgvCPU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCPU.Location = new System.Drawing.Point(111, 136);
+            this.dgvCPU.Name = "dgvCPU";
+            this.dgvCPU.RowHeadersWidth = 51;
+            this.dgvCPU.RowTemplate.Height = 24;
+            this.dgvCPU.Size = new System.Drawing.Size(735, 256);
+            this.dgvCPU.TabIndex = 11;
             // 
             // txtQuantumCPU
             // 
@@ -341,10 +355,6 @@
             this.dgvEntrada.TabIndex = 10;
             this.dgvEntrada.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -357,12 +367,54 @@
             this.label3.Text = "Tabla Inicial";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // pnlProcesoMasCorto
+            // 
+            this.pnlProcesoMasCorto.Controls.Add(this.button1);
+            this.pnlProcesoMasCorto.Controls.Add(this.dgvProcCorto);
+            this.pnlProcesoMasCorto.Location = new System.Drawing.Point(1281, 533);
+            this.pnlProcesoMasCorto.Name = "pnlProcesoMasCorto";
+            this.pnlProcesoMasCorto.Size = new System.Drawing.Size(715, 348);
+            this.pnlProcesoMasCorto.TabIndex = 24;
+            // 
+            // dgvProcCorto
+            // 
+            this.dgvProcCorto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProcCorto.Location = new System.Drawing.Point(52, 71);
+            this.dgvProcCorto.Name = "dgvProcCorto";
+            this.dgvProcCorto.RowHeadersWidth = 51;
+            this.dgvProcCorto.RowTemplate.Height = 24;
+            this.dgvProcCorto.Size = new System.Drawing.Size(604, 256);
+            this.dgvProcCorto.TabIndex = 12;
+            // 
+            // button1
+            // 
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.CausesValidation = false;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.LightCoral;
+            this.button1.FlatAppearance.BorderSize = 1000;
+            this.button1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(135)))), ((int)(((byte)(80)))));
+            this.button1.Location = new System.Drawing.Point(538, 15);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(118, 50);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Ejecutar";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(115)))));
-            this.ClientSize = new System.Drawing.Size(1240, 866);
+            this.ClientSize = new System.Drawing.Size(2027, 1036);
+            this.Controls.Add(this.pnlProcesoMasCorto);
+            this.Controls.Add(this.pnlCPU);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
@@ -378,12 +430,15 @@
             this.menuStrip1.PerformLayout();
             this.pnlPriority.ResumeLayout(false);
             this.pnlPriority.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPrioridadResult)).EndInit();
             this.pnlCPU.ResumeLayout(false);
             this.pnlCPU.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCPU)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntrada)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.pnlProcesoMasCorto.ResumeLayout(false);
+            this.pnlProcesoMasCorto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProcCorto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -400,9 +455,8 @@
         private System.Windows.Forms.ToolStripMenuItem procesosToolStripMenuItem;
         private System.Windows.Forms.TextBox txtQuantum;
         private System.Windows.Forms.Panel pnlPriority;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvPrioridadResult;
         private System.Windows.Forms.DataGridView dgvEntrada;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -411,9 +465,14 @@
         private System.Windows.Forms.Panel pnlCPU;
         private System.Windows.Forms.Button bntCPU;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvCPU;
         private System.Windows.Forms.TextBox txtQuantumCPU;
         private System.Windows.Forms.Button btn_RR;
+        private System.Windows.Forms.Panel RRPnl;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Panel pnlProcesoMasCorto;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dgvProcCorto;
     }
 }
 

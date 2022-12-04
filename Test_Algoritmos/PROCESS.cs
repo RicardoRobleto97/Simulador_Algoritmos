@@ -14,11 +14,18 @@ namespace Test_Algoritmos
     
     public partial class PROCESS
     {
+        public PROCESS()
+        {
+            this.Estado = "Esperando";
+            this.Nombre = " ";
+            this.CPU = 0;
+        }
         public int ID { get; set; }
         public string Nombre { get; set; }
         public Nullable<int> CPU { get; set; }
         public Nullable<int> TiLLegada { get; set; }
         public Nullable<int> Prioridad { get; set; }
+        public string Estado { get; set; }
     }
 
 }
