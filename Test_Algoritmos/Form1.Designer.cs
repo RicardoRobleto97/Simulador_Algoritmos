@@ -58,6 +58,7 @@
             this.pnlProcesoMasCorto = new System.Windows.Forms.Panel();
             this.dgvProcCorto = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.ProcesoCorto = new System.Windows.Forms.Button();
             label1 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -97,6 +98,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(51)))));
+            this.panel1.Controls.Add(this.ProcesoCorto);
             this.panel1.Controls.Add(this.btn_RR);
             this.panel1.Controls.Add(this.algCPU);
             this.panel1.Controls.Add(this.label2);
@@ -104,14 +106,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(268, 1036);
+            this.panel1.Size = new System.Drawing.Size(335, 1036);
             this.panel1.TabIndex = 5;
             // 
             // btn_RR
             // 
             this.btn_RR.Location = new System.Drawing.Point(64, 287);
             this.btn_RR.Name = "btn_RR";
-            this.btn_RR.Size = new System.Drawing.Size(113, 51);
+            this.btn_RR.Size = new System.Drawing.Size(118, 51);
             this.btn_RR.TabIndex = 23;
             this.btn_RR.Text = "Round Robin";
             this.btn_RR.UseVisualStyleBackColor = true;
@@ -172,9 +174,9 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.algoritmosToolStripMenuItem,
             this.procesosToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(268, 0);
+            this.menuStrip1.Location = new System.Drawing.Point(335, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1759, 35);
+            this.menuStrip1.Size = new System.Drawing.Size(1692, 35);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -186,7 +188,7 @@
             this.algoritmosToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.algoritmosToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.algoritmosToolStripMenuItem.Name = "algoritmosToolStripMenuItem";
-            this.algoritmosToolStripMenuItem.Size = new System.Drawing.Size(138, 31);
+            this.algoritmosToolStripMenuItem.Size = new System.Drawing.Size(138, 40);
             this.algoritmosToolStripMenuItem.Text = "Algoritmos";
             // 
             // porCPUToolStripMenuItem
@@ -208,7 +210,7 @@
             this.procesosToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.procesosToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.procesosToolStripMenuItem.Name = "procesosToolStripMenuItem";
-            this.procesosToolStripMenuItem.Size = new System.Drawing.Size(115, 31);
+            this.procesosToolStripMenuItem.Size = new System.Drawing.Size(115, 40);
             this.procesosToolStripMenuItem.Text = "Procesos";
             this.procesosToolStripMenuItem.Click += new System.EventHandler(this.procesosToolStripMenuItem_Click);
             // 
@@ -284,9 +286,9 @@
             this.pnlCPU.Controls.Add(label6);
             this.pnlCPU.Controls.Add(this.dgvCPU);
             this.pnlCPU.Controls.Add(this.txtQuantumCPU);
-            this.pnlCPU.Location = new System.Drawing.Point(289, 438);
+            this.pnlCPU.Location = new System.Drawing.Point(485, 511);
             this.pnlCPU.Name = "pnlCPU";
-            this.pnlCPU.Size = new System.Drawing.Size(972, 443);
+            this.pnlCPU.Size = new System.Drawing.Size(763, 388);
             this.pnlCPU.TabIndex = 24;
             // 
             // RRPnl
@@ -375,7 +377,7 @@
             // 
             this.pnlProcesoMasCorto.Controls.Add(this.button1);
             this.pnlProcesoMasCorto.Controls.Add(this.dgvProcCorto);
-            this.pnlProcesoMasCorto.Location = new System.Drawing.Point(1281, 533);
+            this.pnlProcesoMasCorto.Location = new System.Drawing.Point(1271, 610);
             this.pnlProcesoMasCorto.Name = "pnlProcesoMasCorto";
             this.pnlProcesoMasCorto.Size = new System.Drawing.Size(715, 348);
             this.pnlProcesoMasCorto.TabIndex = 24;
@@ -406,6 +408,25 @@
             this.button1.TabIndex = 23;
             this.button1.Text = "Ejecutar";
             this.button1.UseVisualStyleBackColor = false;
+            // 
+            // ProcesoCorto
+            // 
+            this.ProcesoCorto.AutoSize = true;
+            this.ProcesoCorto.BackColor = System.Drawing.Color.White;
+            this.ProcesoCorto.CausesValidation = false;
+            this.ProcesoCorto.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ProcesoCorto.FlatAppearance.BorderColor = System.Drawing.Color.LightCoral;
+            this.ProcesoCorto.FlatAppearance.BorderSize = 1000;
+            this.ProcesoCorto.Font = new System.Drawing.Font("Microsoft JhengHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProcesoCorto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(135)))), ((int)(((byte)(80)))));
+            this.ProcesoCorto.Location = new System.Drawing.Point(64, 344);
+            this.ProcesoCorto.Name = "ProcesoCorto";
+            this.ProcesoCorto.Size = new System.Drawing.Size(118, 66);
+            this.ProcesoCorto.TabIndex = 24;
+            this.ProcesoCorto.Text = "Proceso+Corto";
+            this.ProcesoCorto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ProcesoCorto.UseVisualStyleBackColor = false;
+            this.ProcesoCorto.Click += new System.EventHandler(this.ProcesoCorto_Click);
             // 
             // Form1
             // 
@@ -473,6 +494,7 @@
         private System.Windows.Forms.Panel pnlProcesoMasCorto;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dgvProcCorto;
+        private System.Windows.Forms.Button ProcesoCorto;
     }
 }
 

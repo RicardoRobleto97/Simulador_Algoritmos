@@ -76,6 +76,8 @@ namespace Test_Algoritmos
             RRPnl.Visible = false;
             pnlPriority.Visible = true;
             dgvPrioridadResult.DataSource = con.GetPROCESS();
+            Prioridad_Form pf=new Prioridad_Form();
+            pf.Show();
             
         }
 
@@ -99,10 +101,12 @@ namespace Test_Algoritmos
         private void algCPU_Click(object sender, EventArgs e)
         {
             //pnlPared.Visible = false;
-            pnlPriority.Visible = false;
-            pnlCPU.Visible = true;
-            RRPnl.Visible = false;
-            dgvCPU.DataSource = con.GetPROCESS();
+            //pnlPriority.Visible = false;
+            //pnlCPU.Visible = true;
+            //RRPnl.Visible = false;
+            //dgvCPU.DataSource = con.GetPROCESS();
+            CPU_Form frm = new CPU_Form();
+            frm.Show();
         }
 
         private void bntCPU_Click(object sender, EventArgs e)
@@ -129,6 +133,12 @@ namespace Test_Algoritmos
             pnlCPU.Visible = false;
             RRPnl.Visible = true;   
             //pnlPriority.Hide();
+        }
+
+        private void ProcesoCorto_Click(object sender, EventArgs e)
+        {
+                MasCorto_Form mf=new MasCorto_Form();
+            mf.Show();
         }
     }
 }
