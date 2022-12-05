@@ -136,6 +136,12 @@
     <Compile Include="Multiples_ColasForm.Designer.cs">
       <DependentUpon>Multiples_ColasForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Paginaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paginaciones.Designer.cs">
+      <DependentUpon>Paginaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Prioridad_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Multiples_ColasForm.resx">
       <DependentUpon>Multiples_ColasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paginaciones.resx">
+      <DependentUpon>Paginaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prioridad_Form.resx">
       <DependentUpon>Prioridad_Form.cs</DependentUpon>

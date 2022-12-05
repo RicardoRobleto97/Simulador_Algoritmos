@@ -507,6 +507,11 @@ namespace Test_Algoritmos
             //Utilizamos el atributo CPU como rafaga ya que era mas conveniente
             bool finIteraciones = false;
             PROCESS pro = null;
+            foreach (PROCESS item in lista)
+            {
+                item.TiLLegada = 0;
+                Console.WriteLine("");
+            }
             while (!finIteraciones)
             {
                 posProceso = 0;

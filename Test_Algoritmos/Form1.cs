@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
 namespace Test_Algoritmos
@@ -17,12 +18,12 @@ namespace Test_Algoritmos
     {
         Conexion con = new Conexion();
         Algoritmos algoritmos = new Algoritmos();
-
+        int paginacion = 0;
         public Form1()
         {
             InitializeComponent();
         }
-
+      
    
         private void button1_Click(object sender, EventArgs e)
         {
@@ -72,7 +73,7 @@ namespace Test_Algoritmos
         private void alg_prioridad_Click(object sender, EventArgs e)
         {
             
-            dgvPrioridadResult.DataSource = con.GetPROCESS();
+            //dgvPrioridadResult.DataSource = con.GetPROCESS();
             Prioridad_Form pf=new Prioridad_Form();
             pf.Show();
             
@@ -80,16 +81,16 @@ namespace Test_Algoritmos
 
         private void btn_prioridad_Click(object sender, EventArgs e)
         {
-            if (txtQuantum.Text=="")
-            {
-                MessageBox.Show("Necesita digitar Quantum en este algoritmo");
+            //if (txtQuantum.Text=="")
+            //{
+            //    MessageBox.Show("Necesita digitar Quantum en este algoritmo");
 
-            }
-            else
-            {
-                algoritmos.Prioridad(int.Parse(txtQuantum.Text));
-                dgvPrioridadResult.DataSource = algoritmos.GetLista();
-            }
+            //}
+            //else
+            //{
+            //    algoritmos.Prioridad(int.Parse(txtQuantum.Text));
+            //  //  dgvPrioridadResult.DataSource = algoritmos.GetLista();
+            //}
 
 
             
@@ -158,6 +159,40 @@ namespace Test_Algoritmos
         {
             Prioridad_IR pf=  new Prioridad_IR();
             pf.Show();
+        }
+
+        private void btnFIFO_Click(object sender, EventArgs e)
+        {
+            paginacion = 1;
+        }
+
+        private void btn_Optimo_Click(object sender, EventArgs e)
+        {
+            paginacion=2;
+        }
+
+        private void btn_NRU_Click(object sender, EventArgs e)
+        {
+            paginacion = 3;
+        }
+
+        private void btn_IIOportunidad_Click(object sender, EventArgs e)
+        {
+            paginacion = 4;
+        }
+
+        private void btn_Reloj_Click(object sender, EventArgs e)
+        {
+            paginacion = 5;
+        }
+
+        private void btn_Referenciass_Click(object sender, EventArgs e)
+        {
+            int marco = int.Parse(txtMarcos.Text);
+            int quantum = int.Parse(txtQuantum.Text);
+            Paginaciones pag=new Paginaciones(paginacion,marco,quantum);
+            
+            pag.Show();
         }
     }
 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label label1;
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_RR = new System.Windows.Forms.Button();
             this.algCPU = new System.Windows.Forms.Button();
@@ -40,11 +39,6 @@
             this.porCPUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.porMemoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtQuantum = new System.Windows.Forms.TextBox();
-            this.pnlPriority = new System.Windows.Forms.Panel();
-            this.btn_prioridad = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dgvPrioridadResult = new System.Windows.Forms.DataGridView();
             this.dgvEntrada = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -53,25 +47,24 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnMultiplesColas = new System.Windows.Forms.Button();
             this.btnPrioridadIR = new System.Windows.Forms.Button();
-            label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_Reloj = new System.Windows.Forms.Button();
+            this.btn_IIOportunidad = new System.Windows.Forms.Button();
+            this.btn_NRU = new System.Windows.Forms.Button();
+            this.btn_Optimo = new System.Windows.Forms.Button();
+            this.btnFIFO = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btn_Referenciass = new System.Windows.Forms.Button();
+            this.txtMarcos = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtQuantum = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.pnlPriority.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPrioridadResult)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntrada)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label1.ForeColor = System.Drawing.Color.White;
-            label1.Location = new System.Drawing.Point(16, 46);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(107, 27);
-            label1.TabIndex = 12;
-            label1.Text = "Quantum";
             // 
             // panel1
             // 
@@ -199,68 +192,6 @@
             this.procesosToolStripMenuItem.Text = "Procesos";
             this.procesosToolStripMenuItem.Click += new System.EventHandler(this.procesosToolStripMenuItem_Click);
             // 
-            // txtQuantum
-            // 
-            this.txtQuantum.Location = new System.Drawing.Point(129, 51);
-            this.txtQuantum.Name = "txtQuantum";
-            this.txtQuantum.Size = new System.Drawing.Size(64, 22);
-            this.txtQuantum.TabIndex = 9;
-            // 
-            // pnlPriority
-            // 
-            this.pnlPriority.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(115)))));
-            this.pnlPriority.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlPriority.Controls.Add(this.btn_prioridad);
-            this.pnlPriority.Controls.Add(this.label4);
-            this.pnlPriority.Controls.Add(label1);
-            this.pnlPriority.Controls.Add(this.dgvPrioridadResult);
-            this.pnlPriority.Controls.Add(this.txtQuantum);
-            this.pnlPriority.Location = new System.Drawing.Point(368, 407);
-            this.pnlPriority.Name = "pnlPriority";
-            this.pnlPriority.Size = new System.Drawing.Size(972, 443);
-            this.pnlPriority.TabIndex = 10;
-            this.pnlPriority.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPriority_Paint);
-            // 
-            // btn_prioridad
-            // 
-            this.btn_prioridad.AutoSize = true;
-            this.btn_prioridad.BackColor = System.Drawing.Color.White;
-            this.btn_prioridad.CausesValidation = false;
-            this.btn_prioridad.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btn_prioridad.FlatAppearance.BorderColor = System.Drawing.Color.LightCoral;
-            this.btn_prioridad.FlatAppearance.BorderSize = 1000;
-            this.btn_prioridad.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btn_prioridad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(135)))), ((int)(((byte)(80)))));
-            this.btn_prioridad.Location = new System.Drawing.Point(842, 18);
-            this.btn_prioridad.Name = "btn_prioridad";
-            this.btn_prioridad.Size = new System.Drawing.Size(118, 50);
-            this.btn_prioridad.TabIndex = 22;
-            this.btn_prioridad.Text = "Ejecutar";
-            this.btn_prioridad.UseVisualStyleBackColor = false;
-            this.btn_prioridad.Click += new System.EventHandler(this.btn_prioridad_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(320, 42);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(312, 31);
-            this.label4.TabIndex = 23;
-            this.label4.Text = "Tabla Resultado Prioridad";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dgvPrioridadResult
-            // 
-            this.dgvPrioridadResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPrioridadResult.Location = new System.Drawing.Point(111, 76);
-            this.dgvPrioridadResult.Name = "dgvPrioridadResult";
-            this.dgvPrioridadResult.RowHeadersWidth = 51;
-            this.dgvPrioridadResult.RowTemplate.Height = 24;
-            this.dgvPrioridadResult.Size = new System.Drawing.Size(807, 353);
-            this.dgvPrioridadResult.TabIndex = 11;
-            // 
             // dgvEntrada
             // 
             this.dgvEntrada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -383,17 +314,195 @@
             this.btnPrioridadIR.UseVisualStyleBackColor = false;
             this.btnPrioridadIR.Click += new System.EventHandler(this.btnPrioridadIR_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(51)))));
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.txtQuantum);
+            this.panel2.Controls.Add(this.txtMarcos);
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.btn_Referenciass);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.btn_Reloj);
+            this.panel2.Controls.Add(this.btn_IIOportunidad);
+            this.panel2.Controls.Add(this.btn_NRU);
+            this.panel2.Controls.Add(this.btn_Optimo);
+            this.panel2.Controls.Add(this.btnFIFO);
+            this.panel2.Location = new System.Drawing.Point(1583, 36);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(443, 999);
+            this.panel2.TabIndex = 23;
+            // 
+            // btn_Reloj
+            // 
+            this.btn_Reloj.AutoSize = true;
+            this.btn_Reloj.BackColor = System.Drawing.Color.White;
+            this.btn_Reloj.CausesValidation = false;
+            this.btn_Reloj.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btn_Reloj.FlatAppearance.BorderColor = System.Drawing.Color.LightCoral;
+            this.btn_Reloj.FlatAppearance.BorderSize = 1000;
+            this.btn_Reloj.Font = new System.Drawing.Font("Microsoft JhengHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Reloj.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(135)))), ((int)(((byte)(80)))));
+            this.btn_Reloj.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btn_Reloj.Location = new System.Drawing.Point(137, 429);
+            this.btn_Reloj.Name = "btn_Reloj";
+            this.btn_Reloj.Size = new System.Drawing.Size(140, 58);
+            this.btn_Reloj.TabIndex = 30;
+            this.btn_Reloj.Text = "Reloj";
+            this.btn_Reloj.UseVisualStyleBackColor = false;
+            this.btn_Reloj.Click += new System.EventHandler(this.btn_Reloj_Click);
+            // 
+            // btn_IIOportunidad
+            // 
+            this.btn_IIOportunidad.AutoSize = true;
+            this.btn_IIOportunidad.BackColor = System.Drawing.Color.White;
+            this.btn_IIOportunidad.CausesValidation = false;
+            this.btn_IIOportunidad.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btn_IIOportunidad.FlatAppearance.BorderColor = System.Drawing.Color.LightCoral;
+            this.btn_IIOportunidad.FlatAppearance.BorderSize = 1000;
+            this.btn_IIOportunidad.Font = new System.Drawing.Font("Microsoft JhengHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_IIOportunidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(135)))), ((int)(((byte)(80)))));
+            this.btn_IIOportunidad.Location = new System.Drawing.Point(137, 350);
+            this.btn_IIOportunidad.Name = "btn_IIOportunidad";
+            this.btn_IIOportunidad.Size = new System.Drawing.Size(140, 57);
+            this.btn_IIOportunidad.TabIndex = 29;
+            this.btn_IIOportunidad.Text = "II Oportunidad";
+            this.btn_IIOportunidad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_IIOportunidad.UseVisualStyleBackColor = false;
+            this.btn_IIOportunidad.Click += new System.EventHandler(this.btn_IIOportunidad_Click);
+            // 
+            // btn_NRU
+            // 
+            this.btn_NRU.BackColor = System.Drawing.Color.White;
+            this.btn_NRU.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btn_NRU.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(135)))), ((int)(((byte)(80)))));
+            this.btn_NRU.Location = new System.Drawing.Point(137, 279);
+            this.btn_NRU.Name = "btn_NRU";
+            this.btn_NRU.Size = new System.Drawing.Size(140, 51);
+            this.btn_NRU.TabIndex = 28;
+            this.btn_NRU.Text = "NRU";
+            this.btn_NRU.UseVisualStyleBackColor = false;
+            this.btn_NRU.Click += new System.EventHandler(this.btn_NRU_Click);
+            // 
+            // btn_Optimo
+            // 
+            this.btn_Optimo.AutoSize = true;
+            this.btn_Optimo.BackColor = System.Drawing.Color.White;
+            this.btn_Optimo.CausesValidation = false;
+            this.btn_Optimo.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btn_Optimo.FlatAppearance.BorderColor = System.Drawing.Color.LightCoral;
+            this.btn_Optimo.FlatAppearance.BorderSize = 1000;
+            this.btn_Optimo.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btn_Optimo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(135)))), ((int)(((byte)(80)))));
+            this.btn_Optimo.Location = new System.Drawing.Point(137, 209);
+            this.btn_Optimo.Name = "btn_Optimo";
+            this.btn_Optimo.Size = new System.Drawing.Size(140, 50);
+            this.btn_Optimo.TabIndex = 27;
+            this.btn_Optimo.Text = "Optimo";
+            this.btn_Optimo.UseVisualStyleBackColor = false;
+            this.btn_Optimo.Click += new System.EventHandler(this.btn_Optimo_Click);
+            // 
+            // btnFIFO
+            // 
+            this.btnFIFO.AutoSize = true;
+            this.btnFIFO.BackColor = System.Drawing.Color.White;
+            this.btnFIFO.CausesValidation = false;
+            this.btnFIFO.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnFIFO.FlatAppearance.BorderColor = System.Drawing.Color.LightCoral;
+            this.btnFIFO.FlatAppearance.BorderSize = 1000;
+            this.btnFIFO.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnFIFO.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(135)))), ((int)(((byte)(80)))));
+            this.btnFIFO.Location = new System.Drawing.Point(137, 139);
+            this.btnFIFO.Name = "btnFIFO";
+            this.btnFIFO.Size = new System.Drawing.Size(140, 50);
+            this.btnFIFO.TabIndex = 26;
+            this.btnFIFO.Text = "FIFO";
+            this.btnFIFO.UseVisualStyleBackColor = false;
+            this.btnFIFO.Click += new System.EventHandler(this.btnFIFO_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(133, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(176, 39);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Paginacion";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btn_Referenciass
+            // 
+            this.btn_Referenciass.AutoSize = true;
+            this.btn_Referenciass.BackColor = System.Drawing.Color.White;
+            this.btn_Referenciass.CausesValidation = false;
+            this.btn_Referenciass.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btn_Referenciass.FlatAppearance.BorderColor = System.Drawing.Color.LightCoral;
+            this.btn_Referenciass.FlatAppearance.BorderSize = 1000;
+            this.btn_Referenciass.Font = new System.Drawing.Font("Microsoft JhengHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Referenciass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(135)))), ((int)(((byte)(80)))));
+            this.btn_Referenciass.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btn_Referenciass.Location = new System.Drawing.Point(0, 930);
+            this.btn_Referenciass.Name = "btn_Referenciass";
+            this.btn_Referenciass.Size = new System.Drawing.Size(140, 58);
+            this.btn_Referenciass.TabIndex = 32;
+            this.btn_Referenciass.Text = "Generar  Referencia";
+            this.btn_Referenciass.UseVisualStyleBackColor = false;
+            this.btn_Referenciass.Click += new System.EventHandler(this.btn_Referenciass_Click);
+            // 
+            // txtMarcos
+            // 
+            this.txtMarcos.Location = new System.Drawing.Point(210, 829);
+            this.txtMarcos.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMarcos.Name = "txtMarcos";
+            this.txtMarcos.Size = new System.Drawing.Size(132, 22);
+            this.txtMarcos.TabIndex = 34;
+            this.txtMarcos.Text = "4";
+            this.txtMarcos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(237, 789);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(72, 24);
+            this.label11.TabIndex = 33;
+            this.label11.Text = "Marcos";
+            // 
+            // txtQuantum
+            // 
+            this.txtQuantum.Location = new System.Drawing.Point(30, 829);
+            this.txtQuantum.Margin = new System.Windows.Forms.Padding(4);
+            this.txtQuantum.Name = "txtQuantum";
+            this.txtQuantum.Size = new System.Drawing.Size(132, 22);
+            this.txtQuantum.TabIndex = 35;
+            this.txtQuantum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(44, 789);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(110, 30);
+            this.label4.TabIndex = 36;
+            this.label4.Text = "Quantum";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(115)))));
             this.ClientSize = new System.Drawing.Size(2027, 1036);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvEntrada);
-            this.Controls.Add(this.pnlPriority);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMenu";
@@ -402,11 +511,10 @@
             this.panel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.pnlPriority.ResumeLayout(false);
-            this.pnlPriority.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPrioridadResult)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntrada)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -421,14 +529,9 @@
         private System.Windows.Forms.ToolStripMenuItem porCPUToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem porMemoriaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem procesosToolStripMenuItem;
-        private System.Windows.Forms.TextBox txtQuantum;
-        private System.Windows.Forms.Panel pnlPriority;
-        private System.Windows.Forms.DataGridView dgvPrioridadResult;
         private System.Windows.Forms.DataGridView dgvEntrada;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btn_prioridad;
         private System.Windows.Forms.Button algCPU;
         private System.Windows.Forms.Button btn_RR;
         private System.Windows.Forms.ErrorProvider errorProvider1;
@@ -437,6 +540,18 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnMultiplesColas;
         private System.Windows.Forms.Button btnPrioridadIR;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_Reloj;
+        private System.Windows.Forms.Button btn_IIOportunidad;
+        private System.Windows.Forms.Button btn_NRU;
+        private System.Windows.Forms.Button btn_Optimo;
+        private System.Windows.Forms.Button btnFIFO;
+        private System.Windows.Forms.Button btn_Referenciass;
+        private System.Windows.Forms.TextBox txtMarcos;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtQuantum;
     }
 }
 
