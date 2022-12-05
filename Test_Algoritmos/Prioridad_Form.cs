@@ -38,7 +38,9 @@ namespace Test_Algoritmos
             try
             {
 
+                
                 dgvPrioridadResult.DataSource = con.GetPROCESS();
+                dgvPrioridadResult.Columns[6].Visible=false;
                 // pnlPared.Visible = true;
                 //pnlPriority.Hide();
             }
@@ -46,6 +48,11 @@ namespace Test_Algoritmos
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void dgvPrioridadResult_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

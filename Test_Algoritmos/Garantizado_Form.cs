@@ -10,16 +10,17 @@ using System.Windows.Forms;
 
 namespace Test_Algoritmos
 {
-    public partial class RR_Form : Form
+    public partial class Garantizado_Form : Form
     {
         Conexion con = new Conexion();
         Algoritmos algoritmos = new Algoritmos();
-        public RR_Form()
+
+        public Garantizado_Form()
         {
             InitializeComponent();
         }
 
-        private void bntRR_Click(object sender, EventArgs e)
+        private void btn_Garantizado_Click(object sender, EventArgs e)
         {
             if (txtQuantum.Text == "")
             {
@@ -28,14 +29,14 @@ namespace Test_Algoritmos
             }
             else
             {
-                algoritmos.RoundRobin(int.Parse(txtQuantum.Text));
-                dgvRR.DataSource = algoritmos.GetLista();
+                algoritmos.PlanifGarantizada(int.Parse(txtQuantum.Text));
+                dgvGarantizadoResult.DataSource = algoritmos.GetLista();
             }
         }
 
-        private void RR_Form_Load(object sender, EventArgs e)
+        private void Garantizado_Form_Load(object sender, EventArgs e)
         {
-            dgvRR.DataSource = con.GetPROCESS();
+            dgvGarantizadoResult.DataSource = con.GetPROCESS();
         }
     }
 }

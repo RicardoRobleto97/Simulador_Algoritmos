@@ -59,6 +59,8 @@
             this.dgvProcCorto = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.ProcesoCorto = new System.Windows.Forms.Button();
+            this.btnGarantizada = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             label1 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -98,6 +100,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(51)))));
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btnGarantizada);
             this.panel1.Controls.Add(this.ProcesoCorto);
             this.panel1.Controls.Add(this.btn_RR);
             this.panel1.Controls.Add(this.algCPU);
@@ -188,7 +192,7 @@
             this.algoritmosToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.algoritmosToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.algoritmosToolStripMenuItem.Name = "algoritmosToolStripMenuItem";
-            this.algoritmosToolStripMenuItem.Size = new System.Drawing.Size(138, 40);
+            this.algoritmosToolStripMenuItem.Size = new System.Drawing.Size(138, 31);
             this.algoritmosToolStripMenuItem.Text = "Algoritmos";
             // 
             // porCPUToolStripMenuItem
@@ -210,7 +214,7 @@
             this.procesosToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.procesosToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.procesosToolStripMenuItem.Name = "procesosToolStripMenuItem";
-            this.procesosToolStripMenuItem.Size = new System.Drawing.Size(115, 40);
+            this.procesosToolStripMenuItem.Size = new System.Drawing.Size(115, 31);
             this.procesosToolStripMenuItem.Text = "Procesos";
             this.procesosToolStripMenuItem.Click += new System.EventHandler(this.procesosToolStripMenuItem_Click);
             // 
@@ -421,12 +425,49 @@
             this.ProcesoCorto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(135)))), ((int)(((byte)(80)))));
             this.ProcesoCorto.Location = new System.Drawing.Point(64, 344);
             this.ProcesoCorto.Name = "ProcesoCorto";
-            this.ProcesoCorto.Size = new System.Drawing.Size(118, 66);
+            this.ProcesoCorto.Size = new System.Drawing.Size(118, 57);
             this.ProcesoCorto.TabIndex = 24;
             this.ProcesoCorto.Text = "Proceso+Corto";
             this.ProcesoCorto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ProcesoCorto.UseVisualStyleBackColor = false;
             this.ProcesoCorto.Click += new System.EventHandler(this.ProcesoCorto_Click);
+            // 
+            // btnGarantizada
+            // 
+            this.btnGarantizada.AutoSize = true;
+            this.btnGarantizada.BackColor = System.Drawing.Color.White;
+            this.btnGarantizada.CausesValidation = false;
+            this.btnGarantizada.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnGarantizada.FlatAppearance.BorderColor = System.Drawing.Color.LightCoral;
+            this.btnGarantizada.FlatAppearance.BorderSize = 1000;
+            this.btnGarantizada.Font = new System.Drawing.Font("Microsoft JhengHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGarantizada.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(135)))), ((int)(((byte)(80)))));
+            this.btnGarantizada.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnGarantizada.Location = new System.Drawing.Point(64, 407);
+            this.btnGarantizada.Name = "btnGarantizada";
+            this.btnGarantizada.Size = new System.Drawing.Size(118, 58);
+            this.btnGarantizada.TabIndex = 25;
+            this.btnGarantizada.Text = "Garantizada";
+            this.btnGarantizada.UseVisualStyleBackColor = false;
+            this.btnGarantizada.Click += new System.EventHandler(this.btnGarantizada_Click);
+            // 
+            // button2
+            // 
+            this.button2.AutoSize = true;
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.CausesValidation = false;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.LightCoral;
+            this.button2.FlatAppearance.BorderSize = 1000;
+            this.button2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(135)))), ((int)(((byte)(80)))));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.button2.Location = new System.Drawing.Point(64, 471);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(118, 58);
+            this.button2.TabIndex = 26;
+            this.button2.Text = "Loteria";
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -495,6 +536,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dgvProcCorto;
         private System.Windows.Forms.Button ProcesoCorto;
+        private System.Windows.Forms.Button btnGarantizada;
+        private System.Windows.Forms.Button button2;
     }
 }
 

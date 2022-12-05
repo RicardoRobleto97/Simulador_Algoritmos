@@ -104,6 +104,7 @@
             this.dgvPrioridadResult.RowTemplate.Height = 24;
             this.dgvPrioridadResult.Size = new System.Drawing.Size(807, 353);
             this.dgvPrioridadResult.TabIndex = 11;
+            this.dgvPrioridadResult.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrioridadResult_CellContentClick);
             // 
             // txtQuantum
             // 

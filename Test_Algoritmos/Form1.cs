@@ -71,10 +71,7 @@ namespace Test_Algoritmos
 
         private void alg_prioridad_Click(object sender, EventArgs e)
         {
-            //pnlPared.Visible = false;
-            pnlCPU.Visible = false;
-            RRPnl.Visible = false;
-            pnlPriority.Visible = true;
+            
             dgvPrioridadResult.DataSource = con.GetPROCESS();
             Prioridad_Form pf=new Prioridad_Form();
             pf.Show();
@@ -128,16 +125,20 @@ namespace Test_Algoritmos
 
         private void btn_RR_Click(object sender, EventArgs e)
         {
-            //pnlPared.Visible = false;
-            pnlPriority.Visible = false;
-            pnlCPU.Visible = false;
-            RRPnl.Visible = true;   
+            RR_Form rf= new RR_Form();
+            rf.Show();
             //pnlPriority.Hide();
         }
 
         private void ProcesoCorto_Click(object sender, EventArgs e)
         {
                 MasCorto_Form mf=new MasCorto_Form();
+            mf.Show();
+        }
+
+        private void btnGarantizada_Click(object sender, EventArgs e)
+        {
+            Garantizado_Form mf=new Garantizado_Form();
             mf.Show();
         }
     }
