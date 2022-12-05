@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label label1;
-            System.Windows.Forms.Label label6;
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_RR = new System.Windows.Forms.Button();
             this.algCPU = new System.Windows.Forms.Button();
@@ -46,33 +45,21 @@
             this.btn_prioridad = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvPrioridadResult = new System.Windows.Forms.DataGridView();
-            this.pnlCPU = new System.Windows.Forms.Panel();
-            this.RRPnl = new System.Windows.Forms.Panel();
-            this.bntCPU = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dgvCPU = new System.Windows.Forms.DataGridView();
-            this.txtQuantumCPU = new System.Windows.Forms.TextBox();
             this.dgvEntrada = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.pnlProcesoMasCorto = new System.Windows.Forms.Panel();
-            this.dgvProcCorto = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.ProcesoCorto = new System.Windows.Forms.Button();
             this.btnGarantizada = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.btnMultiplesColas = new System.Windows.Forms.Button();
+            this.btnPrioridadIR = new System.Windows.Forms.Button();
             label1 = new System.Windows.Forms.Label();
-            label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.pnlPriority.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrioridadResult)).BeginInit();
-            this.pnlCPU.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCPU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntrada)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            this.pnlProcesoMasCorto.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProcCorto)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -86,20 +73,11 @@
             label1.TabIndex = 12;
             label1.Text = "Quantum";
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label6.ForeColor = System.Drawing.Color.White;
-            label6.Location = new System.Drawing.Point(16, 46);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(107, 27);
-            label6.TabIndex = 12;
-            label6.Text = "Quantum";
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(51)))));
+            this.panel1.Controls.Add(this.btnPrioridadIR);
+            this.panel1.Controls.Add(this.btnMultiplesColas);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.btnGarantizada);
             this.panel1.Controls.Add(this.ProcesoCorto);
@@ -115,12 +93,15 @@
             // 
             // btn_RR
             // 
+            this.btn_RR.BackColor = System.Drawing.Color.White;
+            this.btn_RR.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btn_RR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(135)))), ((int)(((byte)(80)))));
             this.btn_RR.Location = new System.Drawing.Point(64, 287);
             this.btn_RR.Name = "btn_RR";
-            this.btn_RR.Size = new System.Drawing.Size(118, 51);
+            this.btn_RR.Size = new System.Drawing.Size(140, 51);
             this.btn_RR.TabIndex = 23;
             this.btn_RR.Text = "Round Robin";
-            this.btn_RR.UseVisualStyleBackColor = true;
+            this.btn_RR.UseVisualStyleBackColor = false;
             this.btn_RR.Click += new System.EventHandler(this.btn_RR_Click);
             // 
             // algCPU
@@ -135,7 +116,7 @@
             this.algCPU.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(135)))), ((int)(((byte)(80)))));
             this.algCPU.Location = new System.Drawing.Point(64, 231);
             this.algCPU.Name = "algCPU";
-            this.algCPU.Size = new System.Drawing.Size(118, 50);
+            this.algCPU.Size = new System.Drawing.Size(140, 50);
             this.algCPU.TabIndex = 22;
             this.algCPU.Text = "CPU";
             this.algCPU.UseVisualStyleBackColor = false;
@@ -165,7 +146,7 @@
             this.alg_prioridad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(135)))), ((int)(((byte)(80)))));
             this.alg_prioridad.Location = new System.Drawing.Point(64, 175);
             this.alg_prioridad.Name = "alg_prioridad";
-            this.alg_prioridad.Size = new System.Drawing.Size(118, 50);
+            this.alg_prioridad.Size = new System.Drawing.Size(140, 50);
             this.alg_prioridad.TabIndex = 0;
             this.alg_prioridad.Text = "Prioridad";
             this.alg_prioridad.UseVisualStyleBackColor = false;
@@ -234,7 +215,7 @@
             this.pnlPriority.Controls.Add(label1);
             this.pnlPriority.Controls.Add(this.dgvPrioridadResult);
             this.pnlPriority.Controls.Add(this.txtQuantum);
-            this.pnlPriority.Location = new System.Drawing.Point(1125, 21);
+            this.pnlPriority.Location = new System.Drawing.Point(368, 407);
             this.pnlPriority.Name = "pnlPriority";
             this.pnlPriority.Size = new System.Drawing.Size(972, 443);
             this.pnlPriority.TabIndex = 10;
@@ -280,76 +261,6 @@
             this.dgvPrioridadResult.Size = new System.Drawing.Size(807, 353);
             this.dgvPrioridadResult.TabIndex = 11;
             // 
-            // pnlCPU
-            // 
-            this.pnlCPU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(115)))));
-            this.pnlCPU.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlCPU.Controls.Add(this.RRPnl);
-            this.pnlCPU.Controls.Add(this.bntCPU);
-            this.pnlCPU.Controls.Add(this.label5);
-            this.pnlCPU.Controls.Add(label6);
-            this.pnlCPU.Controls.Add(this.dgvCPU);
-            this.pnlCPU.Controls.Add(this.txtQuantumCPU);
-            this.pnlCPU.Location = new System.Drawing.Point(485, 511);
-            this.pnlCPU.Name = "pnlCPU";
-            this.pnlCPU.Size = new System.Drawing.Size(763, 388);
-            this.pnlCPU.TabIndex = 24;
-            // 
-            // RRPnl
-            // 
-            this.RRPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.RRPnl.Location = new System.Drawing.Point(3, 446);
-            this.RRPnl.Name = "RRPnl";
-            this.RRPnl.Size = new System.Drawing.Size(969, 437);
-            this.RRPnl.TabIndex = 24;
-            // 
-            // bntCPU
-            // 
-            this.bntCPU.AutoSize = true;
-            this.bntCPU.BackColor = System.Drawing.Color.White;
-            this.bntCPU.CausesValidation = false;
-            this.bntCPU.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bntCPU.FlatAppearance.BorderColor = System.Drawing.Color.LightCoral;
-            this.bntCPU.FlatAppearance.BorderSize = 1000;
-            this.bntCPU.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.bntCPU.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(135)))), ((int)(((byte)(80)))));
-            this.bntCPU.Location = new System.Drawing.Point(836, 13);
-            this.bntCPU.Name = "bntCPU";
-            this.bntCPU.Size = new System.Drawing.Size(118, 50);
-            this.bntCPU.TabIndex = 22;
-            this.bntCPU.Text = "Ejecutar";
-            this.bntCPU.UseVisualStyleBackColor = false;
-            this.bntCPU.Click += new System.EventHandler(this.bntCPU_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(344, 42);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(253, 31);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "Tabla Resultado CPU";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dgvCPU
-            // 
-            this.dgvCPU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCPU.Location = new System.Drawing.Point(111, 136);
-            this.dgvCPU.Name = "dgvCPU";
-            this.dgvCPU.RowHeadersWidth = 51;
-            this.dgvCPU.RowTemplate.Height = 24;
-            this.dgvCPU.Size = new System.Drawing.Size(735, 256);
-            this.dgvCPU.TabIndex = 11;
-            // 
-            // txtQuantumCPU
-            // 
-            this.txtQuantumCPU.Location = new System.Drawing.Point(129, 51);
-            this.txtQuantumCPU.Name = "txtQuantumCPU";
-            this.txtQuantumCPU.Size = new System.Drawing.Size(64, 22);
-            this.txtQuantumCPU.TabIndex = 9;
-            // 
             // dgvEntrada
             // 
             this.dgvEntrada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -377,42 +288,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // pnlProcesoMasCorto
-            // 
-            this.pnlProcesoMasCorto.Controls.Add(this.button1);
-            this.pnlProcesoMasCorto.Controls.Add(this.dgvProcCorto);
-            this.pnlProcesoMasCorto.Location = new System.Drawing.Point(1271, 610);
-            this.pnlProcesoMasCorto.Name = "pnlProcesoMasCorto";
-            this.pnlProcesoMasCorto.Size = new System.Drawing.Size(715, 348);
-            this.pnlProcesoMasCorto.TabIndex = 24;
-            // 
-            // dgvProcCorto
-            // 
-            this.dgvProcCorto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProcCorto.Location = new System.Drawing.Point(52, 71);
-            this.dgvProcCorto.Name = "dgvProcCorto";
-            this.dgvProcCorto.RowHeadersWidth = 51;
-            this.dgvProcCorto.RowTemplate.Height = 24;
-            this.dgvProcCorto.Size = new System.Drawing.Size(604, 256);
-            this.dgvProcCorto.TabIndex = 12;
-            // 
-            // button1
-            // 
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.CausesValidation = false;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.LightCoral;
-            this.button1.FlatAppearance.BorderSize = 1000;
-            this.button1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(135)))), ((int)(((byte)(80)))));
-            this.button1.Location = new System.Drawing.Point(538, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 50);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Ejecutar";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // ProcesoCorto
             // 
             this.ProcesoCorto.AutoSize = true;
@@ -425,7 +300,7 @@
             this.ProcesoCorto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(135)))), ((int)(((byte)(80)))));
             this.ProcesoCorto.Location = new System.Drawing.Point(64, 344);
             this.ProcesoCorto.Name = "ProcesoCorto";
-            this.ProcesoCorto.Size = new System.Drawing.Size(118, 57);
+            this.ProcesoCorto.Size = new System.Drawing.Size(140, 57);
             this.ProcesoCorto.TabIndex = 24;
             this.ProcesoCorto.Text = "Proceso+Corto";
             this.ProcesoCorto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -445,7 +320,7 @@
             this.btnGarantizada.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
             this.btnGarantizada.Location = new System.Drawing.Point(64, 407);
             this.btnGarantizada.Name = "btnGarantizada";
-            this.btnGarantizada.Size = new System.Drawing.Size(118, 58);
+            this.btnGarantizada.Size = new System.Drawing.Size(140, 58);
             this.btnGarantizada.TabIndex = 25;
             this.btnGarantizada.Text = "Garantizada";
             this.btnGarantizada.UseVisualStyleBackColor = false;
@@ -464,10 +339,49 @@
             this.button2.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
             this.button2.Location = new System.Drawing.Point(64, 471);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(118, 58);
+            this.button2.Size = new System.Drawing.Size(140, 58);
             this.button2.TabIndex = 26;
             this.button2.Text = "Loteria";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // btnMultiplesColas
+            // 
+            this.btnMultiplesColas.AutoSize = true;
+            this.btnMultiplesColas.BackColor = System.Drawing.Color.White;
+            this.btnMultiplesColas.CausesValidation = false;
+            this.btnMultiplesColas.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnMultiplesColas.FlatAppearance.BorderColor = System.Drawing.Color.LightCoral;
+            this.btnMultiplesColas.FlatAppearance.BorderSize = 1000;
+            this.btnMultiplesColas.Font = new System.Drawing.Font("Microsoft JhengHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMultiplesColas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(135)))), ((int)(((byte)(80)))));
+            this.btnMultiplesColas.Location = new System.Drawing.Point(64, 535);
+            this.btnMultiplesColas.Name = "btnMultiplesColas";
+            this.btnMultiplesColas.Size = new System.Drawing.Size(140, 57);
+            this.btnMultiplesColas.TabIndex = 27;
+            this.btnMultiplesColas.Text = "Multiples Colas";
+            this.btnMultiplesColas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMultiplesColas.UseVisualStyleBackColor = false;
+            this.btnMultiplesColas.Click += new System.EventHandler(this.btnMultiplesColas_Click);
+            // 
+            // btnPrioridadIR
+            // 
+            this.btnPrioridadIR.AutoSize = true;
+            this.btnPrioridadIR.BackColor = System.Drawing.Color.White;
+            this.btnPrioridadIR.CausesValidation = false;
+            this.btnPrioridadIR.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnPrioridadIR.FlatAppearance.BorderColor = System.Drawing.Color.LightCoral;
+            this.btnPrioridadIR.FlatAppearance.BorderSize = 1000;
+            this.btnPrioridadIR.Font = new System.Drawing.Font("Microsoft JhengHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrioridadIR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(135)))), ((int)(((byte)(80)))));
+            this.btnPrioridadIR.Location = new System.Drawing.Point(64, 610);
+            this.btnPrioridadIR.Name = "btnPrioridadIR";
+            this.btnPrioridadIR.Size = new System.Drawing.Size(140, 57);
+            this.btnPrioridadIR.TabIndex = 28;
+            this.btnPrioridadIR.Text = "Prioridad IR";
+            this.btnPrioridadIR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrioridadIR.UseVisualStyleBackColor = false;
+            this.btnPrioridadIR.Click += new System.EventHandler(this.btnPrioridadIR_Click);
             // 
             // Form1
             // 
@@ -475,8 +389,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(115)))));
             this.ClientSize = new System.Drawing.Size(2027, 1036);
-            this.Controls.Add(this.pnlProcesoMasCorto);
-            this.Controls.Add(this.pnlCPU);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
@@ -493,14 +405,8 @@
             this.pnlPriority.ResumeLayout(false);
             this.pnlPriority.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrioridadResult)).EndInit();
-            this.pnlCPU.ResumeLayout(false);
-            this.pnlCPU.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCPU)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntrada)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            this.pnlProcesoMasCorto.ResumeLayout(false);
-            this.pnlProcesoMasCorto.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProcCorto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -524,20 +430,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btn_prioridad;
         private System.Windows.Forms.Button algCPU;
-        private System.Windows.Forms.Panel pnlCPU;
-        private System.Windows.Forms.Button bntCPU;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dgvCPU;
-        private System.Windows.Forms.TextBox txtQuantumCPU;
         private System.Windows.Forms.Button btn_RR;
-        private System.Windows.Forms.Panel RRPnl;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.Panel pnlProcesoMasCorto;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dgvProcCorto;
         private System.Windows.Forms.Button ProcesoCorto;
         private System.Windows.Forms.Button btnGarantizada;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnMultiplesColas;
+        private System.Windows.Forms.Button btnPrioridadIR;
     }
 }
 

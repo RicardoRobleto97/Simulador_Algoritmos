@@ -103,6 +103,12 @@
     <Compile Include="Garantizado_Form.Designer.cs">
       <DependentUpon>Garantizado_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Loteria_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Loteria_Form.Designer.cs">
+      <DependentUpon>Loteria_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="MasCorto_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,11 +130,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model_Process.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Multiples_ColasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Multiples_ColasForm.Designer.cs">
+      <DependentUpon>Multiples_ColasForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Prioridad_Form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Prioridad_Form.Designer.cs">
       <DependentUpon>Prioridad_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prioridad_IR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prioridad_IR.Designer.cs">
+      <DependentUpon>Prioridad_IR.cs</DependentUpon>
     </Compile>
     <Compile Include="Proceso.cs" />
     <Compile Include="PROCESS.cs">
@@ -157,11 +175,20 @@
     <EmbeddedResource Include="Garantizado_Form.resx">
       <DependentUpon>Garantizado_Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Loteria_Form.resx">
+      <DependentUpon>Loteria_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MasCorto_Form.resx">
       <DependentUpon>MasCorto_Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Multiples_ColasForm.resx">
+      <DependentUpon>Multiples_ColasForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Prioridad_Form.resx">
       <DependentUpon>Prioridad_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prioridad_IR.resx">
+      <DependentUpon>Prioridad_IR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProcessForm.resx">
       <DependentUpon>ProcessForm.cs</DependentUpon>

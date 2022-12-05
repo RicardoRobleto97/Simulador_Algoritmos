@@ -141,5 +141,23 @@ namespace Test_Algoritmos
             Garantizado_Form mf=new Garantizado_Form();
             mf.Show();
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Loteria_Form mf=new Loteria_Form();
+            mf.Show();
+        }
+
+        private void btnMultiplesColas_Click(object sender, EventArgs e)
+        {
+            Multiples_ColasForm mf=new Multiples_ColasForm();
+            mf.Show();
+        }
+
+        private void btnPrioridadIR_Click(object sender, EventArgs e)
+        {
+            Prioridad_IR pf=  new Prioridad_IR();
+            pf.Show();
+        }
     }
 }

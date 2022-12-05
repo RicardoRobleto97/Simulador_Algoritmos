@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -9,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Test_Algoritmos
 {
-     class Algoritmos
+    class Algoritmos
     {
         public static List<PROCESS> lista = new List<PROCESS>();
         public static List<PROCESS> resultlista = new List<PROCESS>();
@@ -20,10 +21,10 @@ namespace Test_Algoritmos
         //TABLA ENTRADA
         public Algoritmos()
         {
-           
+
             lista = con.GetPROCESS();
-           
-        
+
+
         }
         //TABLA RESULTADO
         public List<PROCESS> GetLista()
@@ -36,7 +37,7 @@ namespace Test_Algoritmos
 
             bool finIteraciones = false;
             PROCESS pro = null, proAnterior = null;
-            
+
             for (int j = 0; j <= lista.Count - 2; j++)
             {
                 for (int i = 0; i <= lista.Count - 2; i++)
@@ -64,39 +65,40 @@ namespace Test_Algoritmos
                     }
                     else
                     {
-                        if (!proAnterior.Nombre.Equals(lista[i].Nombre) && lista[i].CPU> 0 &&
+                        if (!proAnterior.Nombre.Equals(lista[i].Nombre) && lista[i].CPU > 0 &&
                             lista[i].Prioridad <= pro.Prioridad)
                             pro = lista[i];
                     }
                 }
 
                 proAnterior = pro;
-               // PROCESS tempres = new PROCESS();
+                // PROCESS tempres = new PROCESS();
                 if (pro.CPU > quantum)
                 {
                     Console.WriteLine("Restando CPU a: " + pro.Nombre);
                     pro.Estado = "Restando CPU";
                     pro.CPU = (pro.CPU - quantum);
-                   
-                    if (pro.CPU > quantum) {
+
+                    if (pro.CPU > quantum)
+                    {
                         pro.Estado = "Bloqueado";
                     }
                     //Console.WriteLine("Proceso pasa a bloqueado");
-                       
-                    
+
+
                     else
                     {
                         Console.WriteLine("Proceso pasa a listo");
                         pro.Estado = "Listo";
                     }
-                    
-                    
+
+
                 }
                 else if (pro.CPU <= quantum)
                 {
                     Console.WriteLine("Proceso terminado: " + pro.Nombre);
                     pro.CPU = (0);
-                    pro.Estado="Terminado";
+                    pro.Estado = "Terminado";
                 }
                 resultlista.Add(new PROCESS
                 {
@@ -105,7 +107,7 @@ namespace Test_Algoritmos
                     CPU = pro.CPU,
                     Prioridad = pro.Prioridad,
                     TiLLegada = pro.TiLLegada,
-                   Estado=pro.Estado,
+                    Estado = pro.Estado,
                 });
                 finIteraciones = true;
 
@@ -119,7 +121,7 @@ namespace Test_Algoritmos
         {
             int quantum = Quantum, pos = 0;
             bool finIteraciones = false, turno = true; //turno = true, 1er elemento, turno = false, 2do elementa
-            PROCESS pro=null;
+            PROCESS pro = null;
             for (int j = 0; j <= lista.Count - 2; j++)
             {
                 for (int i = 0; i <= lista.Count - 2; i++)
@@ -135,8 +137,8 @@ namespace Test_Algoritmos
 
             while (!finIteraciones)
             {
-                pro = lista[lista.Count-1];
-               
+                pro = lista[lista.Count - 1];
+
                 if (pos < lista.Count)
                 {
                     for (int i = 0; i < lista.Count; i++)
@@ -156,9 +158,9 @@ namespace Test_Algoritmos
                         pro.Nombre = lista[pos].Nombre;
                         resultlista.Add(new PROCESS
                         {
-                           
+
                             Nombre = pro.Nombre,
-                         
+
                             Prioridad = pro.Prioridad,
                             TiLLegada = pro.TiLLegada,
                             Estado = pro.Estado,
@@ -168,26 +170,27 @@ namespace Test_Algoritmos
                         pro.Nombre = lista[pos].Nombre;
                         resultlista.Add(new PROCESS
                         {
-                      
+
                             Nombre = pro.Nombre,
-                          
+
                             Prioridad = pro.Prioridad,
                             TiLLegada = pro.TiLLegada,
                             Estado = pro.Estado,
                         });
-                        lista[pos].CPU=(lista[pos].CPU - quantum);
+                        lista[pos].CPU = (lista[pos].CPU - quantum);
 
-                        pro.CPU=lista[pos].CPU = (lista[pos].CPU - quantum);
+                        pro.CPU = lista[pos].CPU = (lista[pos].CPU - quantum);
                         resultlista.Add(new PROCESS
                         {
-                           
+
                             Nombre = pro.Nombre,
-                           
+
                             Prioridad = pro.Prioridad,
                             TiLLegada = pro.TiLLegada,
                             Estado = pro.Estado,
                         });
-                        if (lista[pos].CPU > quantum) {
+                        if (lista[pos].CPU > quantum)
+                        {
                             Console.WriteLine("El proceso pasa a bloqueo" + lista[pos].Nombre);
                             pro.Estado = " Bloqueo";
                             pro.Nombre = lista[pos].Nombre;
@@ -201,7 +204,7 @@ namespace Test_Algoritmos
                                 Estado = pro.Estado,
                             });
                         }
-                          
+
 
                     }
                     else if (lista[pos].CPU <= quantum)
@@ -211,7 +214,7 @@ namespace Test_Algoritmos
                         pro.Nombre = lista[pos].Nombre;
                         resultlista.Add(new PROCESS
                         {
-                           
+
                             Nombre = pro.Nombre,
                             CPU = pro.CPU,
                             Prioridad = pro.Prioridad,
@@ -219,15 +222,15 @@ namespace Test_Algoritmos
                             Estado = pro.Estado,
                         });
                         Console.WriteLine("En ejecucion: " + lista[pos].Nombre);
-                        lista[pos].CPU=0;
+                        lista[pos].CPU = 0;
                         pro.CPU = lista[pos].CPU;
                         pro.Nombre = lista[pos].Nombre;
                         pro.Estado = " Ejecucion";
                         resultlista.Add(new PROCESS
                         {
-                           
+
                             Nombre = pro.Nombre,
-                            
+
                             Prioridad = pro.Prioridad,
                             TiLLegada = pro.TiLLegada,
                             Estado = pro.Estado,
@@ -237,9 +240,9 @@ namespace Test_Algoritmos
                         pro.Nombre = lista[pos].Nombre;
                         resultlista.Add(new PROCESS
                         {
-                            
+
                             Nombre = pro.Nombre,
-                            
+
                             Prioridad = pro.Prioridad,
                             TiLLegada = pro.TiLLegada,
                             Estado = pro.Estado,
@@ -270,9 +273,9 @@ namespace Test_Algoritmos
             }
             resultlista.Add(new PROCESS
             {
-              
+
                 Nombre = pro.Nombre,
-                
+
                 Prioridad = pro.Prioridad,
                 TiLLegada = pro.TiLLegada,
                 Estado = pro.Estado,
@@ -288,9 +291,9 @@ namespace Test_Algoritmos
                     pro.Nombre = lista[pos].Nombre;
                     resultlista.Add(new PROCESS
                     {
-                       
+
                         Nombre = pro.Nombre,
-                        
+
                         Prioridad = pro.Prioridad,
                         TiLLegada = pro.TiLLegada,
                         Estado = pro.Estado,
@@ -300,15 +303,16 @@ namespace Test_Algoritmos
                     pro.Nombre = lista[pos].Nombre;
                     resultlista.Add(new PROCESS
                     {
-                        
+
                         Nombre = pro.Nombre,
-                       
+
                         Prioridad = pro.Prioridad,
                         TiLLegada = pro.TiLLegada,
                         Estado = pro.Estado,
                     });
-                    lista[pos].CPU=(lista[pos].CPU - quantum);
-                    if (lista[pos].CPU > quantum) {
+                    lista[pos].CPU = (lista[pos].CPU - quantum);
+                    if (lista[pos].CPU > quantum)
+                    {
                         Console.WriteLine("El proceso pasa a bloqueo" + lista[pos].Nombre);
                         pro.Estado = " Bloqueo";
                         pro.Nombre = lista[pos].Nombre;
@@ -322,7 +326,7 @@ namespace Test_Algoritmos
                             Estado = pro.Estado,
                         });
                     }
-                      
+
                 }
                 else if (lista[pos].CPU <= quantum)
                 {
@@ -330,22 +334,22 @@ namespace Test_Algoritmos
                     pro.Nombre = lista[pos].Nombre;
                     resultlista.Add(new PROCESS
                     {
-                       
+
                         Nombre = pro.Nombre,
-                      
+
                         Prioridad = pro.Prioridad,
                         TiLLegada = pro.TiLLegada,
                         Estado = pro.Estado,
                     });
                     Console.WriteLine("En ejecucion: " + lista[pos].Nombre);
                     pro.Nombre = lista[pos].Nombre;
-                    lista[pos].CPU=0;
+                    lista[pos].CPU = 0;
                     pro.CPU = lista[pos].CPU;
                     resultlista.Add(new PROCESS
                     {
-                      
+
                         Nombre = pro.Nombre,
-                        
+
                         Prioridad = pro.Prioridad,
                         TiLLegada = pro.TiLLegada,
                         Estado = pro.Estado,
@@ -354,9 +358,9 @@ namespace Test_Algoritmos
                     pro.Nombre = lista[pos].Nombre;
                     resultlista.Add(new PROCESS
                     {
-                       
+
                         Nombre = pro.Nombre,
-                       
+
                         Prioridad = pro.Prioridad,
                         TiLLegada = pro.TiLLegada,
                         Estado = pro.Estado,
@@ -364,9 +368,9 @@ namespace Test_Algoritmos
                 }
                 resultlista.Add(new PROCESS
                 {
-                    
+
                     Nombre = pro.Nombre,
-                    
+
                     Prioridad = pro.Prioridad,
                     TiLLegada = pro.TiLLegada,
                     Estado = pro.Estado,
@@ -391,22 +395,22 @@ namespace Test_Algoritmos
             {
                 for (int i = 0; i < lista.Count; i++)
                 {
-                    if (lista[i].TiLLegada== tiempoGlobal)
+                    if (lista[i].TiLLegada == tiempoGlobal)
                     {
                         Console.WriteLine("Insertando proceso: " + lista[i].Nombre + " tiempo " + tiempoGlobal);
                         tempLista.Add(lista[i]);
                         lista.RemoveAt(i);
                     }
                 }
-               //pro = lista[lista.Count - 1];
+                //pro = lista[lista.Count - 1];
 
                 if (contadorQ == tempLista[0].CPU)
                 {
                     Console.WriteLine("Proceso terminado: " + tempLista[0].Nombre + " tiempo: " + tiempoGlobal);
-                    
+
                     pro = tempLista[0];
                     pro.Estado = "Terminado";
-                    pro.TiLLegada= tiempoGlobal;
+                    pro.TiLLegada = tiempoGlobal;
                     resultlista.Add(new PROCESS
                     {
                         ID = pro.ID,
@@ -420,14 +424,14 @@ namespace Test_Algoritmos
 
                     tempLista.RemoveAt(0);
                     contadorQ = 0;
-                    
-                   
+
+
                 }
                 else if (contadorQ - quantum == 0)
                 {
                     Console.WriteLine("Ejecutando CPU proceso: " + tempLista[0].Nombre + " tiempo: " + tiempoGlobal);
                     pro.Estado = "Ejecucion";
-                    tempLista[0].CPU=(tempLista[0].CPU - quantum);
+                    tempLista[0].CPU = (tempLista[0].CPU - quantum);
                     pro.CPU = tempLista[0].CPU;
                     Console.WriteLine("CPU restante: " + tempLista[0].CPU);
                     pro = tempLista[0];
@@ -446,7 +450,7 @@ namespace Test_Algoritmos
                             Estado = pro.Estado,
                         });
                     }
-                    
+
                     else if (tempLista[0].CPU != 0)
                     {
                         Console.WriteLine("El proceso pasa a listo");
@@ -461,7 +465,7 @@ namespace Test_Algoritmos
                             Estado = pro.Estado,
                         });
                     }
-                       
+
                     tempLista.Add(tempLista[0]);
                     tempLista.RemoveAt(0);
                     contadorQ = 0;
@@ -498,7 +502,7 @@ namespace Test_Algoritmos
                         posProceso = i;
                         compararCPU = (int)lista[i].CPU;
                     }
-                    else if (lista[i].CPU < compararCPU && lista[i].TiLLegada<= tiempoGlobal)
+                    else if (lista[i].CPU < compararCPU && lista[i].TiLLegada <= tiempoGlobal)
                     {
                         posProceso = i;
                         compararCPU = (int)lista[i].CPU;
@@ -512,7 +516,7 @@ namespace Test_Algoritmos
                     tiempoGlobal += (int)lista[posProceso].CPU;
                     pro.Estado = " Ejecutado";
                     pro.Nombre = lista[posProceso].Nombre;
-                    pro.TiLLegada= tiempoGlobal;
+                    pro.TiLLegada = tiempoGlobal;
                     //pro.CPU=
                     Console.WriteLine("Termina en T: " + tiempoGlobal);
 
@@ -521,7 +525,7 @@ namespace Test_Algoritmos
                     {
 
                         Nombre = pro.Nombre,
-                        CPU=pro.CPU,
+                        CPU = pro.CPU,
                         Prioridad = pro.Prioridad,
                         TiLLegada = pro.TiLLegada,
                         Estado = pro.Estado,
@@ -585,8 +589,8 @@ namespace Test_Algoritmos
                         if (lista[i].AlgoCPU > recibeQuantum)
                         {
                             Console.WriteLine("Proceso: " + lista[i].Nombre);
-                           
-                            lista[i].AlgoCPU=(lista[i].AlgoCPU - recibeQuantum);
+
+                            lista[i].AlgoCPU = (lista[i].AlgoCPU - recibeQuantum);
                             //pro.AlgoCPU = lista[i].AlgoCPU = (lista[i].AlgoCPU - recibeQuantum);
                             Console.WriteLine("Se le resto: " + recibeQuantum + " quantum restante: " + lista[i].AlgoCPU);
                             pro = lista[i];
@@ -604,8 +608,8 @@ namespace Test_Algoritmos
                         else
                         {
                             Console.WriteLine("Proceso terminado: " + lista[i].Nombre);
-                           
-                            lista[i].AlgoCPU=0;
+
+                            lista[i].AlgoCPU = 0;
                             pro = lista[i];
 
                             pro.Estado = "Terminado";
@@ -621,9 +625,9 @@ namespace Test_Algoritmos
 
                         }
                     }
-                   
+
                 }
-               
+
 
                 finIteraciones = true;
 
@@ -637,74 +641,302 @@ namespace Test_Algoritmos
             }
 
         }
-        //public static void AlgorPorLoteria(int Quantum)
-        //{
-        //    int quantum = Quantum, sumPrioridad, porcentaje, loteria;
-        //    double ticket = 10;
-        //    Random random = new Random();
-        //    bool procesoTerminado, finIteraciones = false;
 
-        //    while (!finIteraciones)
-        //    {
-        //        sumPrioridad = 0;
-        //        porcentaje = 100;
-        //        finIteraciones = false;
-        //        procesoTerminado = false;
+        internal void AlgorPorLoteria(int Quantum)
+        {
+            int quantum = Quantum;
+            double ticket = 10, sumPrioridad, porcentaje, loteria ;
+            Random random = new Random();
+            bool procesoTerminado, finIteraciones = false;
+            PROCESS pro = null;
+            while (!finIteraciones)
+            {
+                sumPrioridad = 1;
+                porcentaje = 100;
+                finIteraciones = false;
+                procesoTerminado = false;
 
-        //        for (int i = 0; i < lista.Count; i++)
-        //        {
-        //            sumPrioridad += (int)lista[i].Prioridad;
-        //        }
-        //        Console.WriteLine("SumPrioridad " + sumPrioridad);
+                for (int i = 0; i < lista.Count; i++)
+                {
+                    sumPrioridad += (int)lista[i].Prioridad;
+                }
+                Console.WriteLine("SumPrioridad " + sumPrioridad);
 
-        //        porcentaje /= sumPrioridad;
-        //        Console.WriteLine("Porcentaje: " + porcentaje);
+                porcentaje /= sumPrioridad;
+                Console.WriteLine("Porcentaje: " + porcentaje);
 
-        //        for (int i = 0; i < lista.Count; i++)
-        //        {
-        //            lista[i].Probabilidad=porcentaje * lista[i].Prioridad);
-        //            if (i == 0)
-        //                lista[i].setTicket(Convert.ToInt32(Math.Round(lista[i].getProbabilidad() / ticket)));
-        //            else
-        //                lista[i].setTicket(lista[i - 1].getTicket() + Convert.ToInt32(Math.Round(lista[i].getProbabilidad() / ticket)));
-        //        }
-        //        Console.WriteLine("Num ticket para ultimo proceso: " + lista[^1].getTicket()); //-> lista[lista.Count-1].getTicket()
+                for (int i = 0; i < lista.Count; i++)
+                {
+                    lista[i].probabilidad=(porcentaje * (double)lista[i].Prioridad);
+                    if (i == 0)
+                        lista[i].Ticket=(lista[i].probabilidad / ticket);
+                    else
+                        lista[i].Ticket=(lista[i - 1].Ticket + lista[i].probabilidad / ticket);
+                }
+                Console.WriteLine("Num ticket para ultimo proceso: " + lista[lista.Count - 1].Ticket); //-> lista[lista.Count-1].getTicket()
 
-        //        while (!procesoTerminado)
-        //        {
-        //            loteria = random.Next(1, lista[lista.Count - 1].getTicket());
-        //            Console.WriteLine("Loteria: " + loteria);
+                while (!procesoTerminado)
+                {
+                    loteria = random.Next(0, Convert.ToInt32(lista[lista.Count - 1].Ticket));
+                    Console.WriteLine("Loteria: " + loteria);
 
-        //            for (int i = 0; i < lista.Count; i++)
-        //            {
-        //                if (loteria <= lista[i].getTicket())
-        //                {
-        //                    if (lista[i].CPU < quantum)
-        //                        lista[i].CPU=0;
-        //                    else
-        //                        lista[i].setCPU(lista[i].getCPU() - quantum);
-        //                    Console.WriteLine("Se resto CPU a proceso: " + lista[i].Nombre + " - " + lista[i].CPU);
+                    for (int i = 0; i < lista.Count; i++)
+                    {
+                        if (loteria <= lista[i].Ticket)
+                        {
+                            if (lista[i].CPU < quantum)
+                                lista[i].CPU=0;
+                            else {
+                                lista[i].CPU = (lista[i].CPU - quantum);
+                                Console.WriteLine("Se resto CPU a proceso: " + lista[i].Nombre + " - " + lista[i].CPU);
+                                pro = lista[i];
+                                pro.Estado = "Ejecucion";
 
-        //                    if (lista[i].CPU > quantum && lista[i].CPU != 0)
-        //                        Console.WriteLine("El proceso pasa a bloqueado");
-        //                    else if (lista[i].CPU != 0)
-        //                        Console.WriteLine("El proceso pasa a listo");
+                                resultlista.Add(new PROCESS
+                                {
+                                    ID = pro.ID,
+                                    Nombre = pro.Nombre,
+                                    CPU = pro.CPU,
+                                    Prioridad = pro.Prioridad,
+                                    TiLLegada = pro.TiLLegada,
+                                    Estado = pro.Estado,
+                                });
+                            }
+                                
+                            if (lista[i].CPU > quantum && lista[i].CPU != 0) {
 
-        //                    if (lista[i].CPU == 0)
-        //                    {
-        //                        Console.WriteLine("El proceso " + lista[i].Nombre + " se ha terminado");
-        //                        lista.RemoveAt(i);
-        //                        procesoTerminado = true;
-        //                    }
-        //                    break;
-        //                }
-        //            }
-        //        }
+                                Console.WriteLine("El proceso pasa a bloqueado");
+                                pro = lista[i];
+                                pro.Estado = "Bloqueado";
+                                resultlista.Add(new PROCESS
+                                {
+                                    ID = pro.ID,
+                                    Nombre = pro.Nombre,
+                                    CPU = pro.CPU,
+                                    Prioridad = pro.Prioridad,
+                                    TiLLegada = pro.TiLLegada,
+                                    Estado = pro.Estado,
+                                });
 
-        //        if (lista.Count == 0)
-        //            finIteraciones = true;
+                            }
+                                
+                            else if (lista[i].CPU != 0)
+                            {
+                                Console.WriteLine("El proceso pasa a listo");
+                                pro = lista[i];
+                                pro.Estado = "Listo";
 
-        //    }
+                                resultlista.Add(new PROCESS
+                                {
+                                    ID = pro.ID,
+                                    Nombre = pro.Nombre,
+                                    CPU = pro.CPU,
+                                    Prioridad = pro.Prioridad,
+                                    TiLLegada = pro.TiLLegada,
+                                    Estado = pro.Estado,
+                                });
+                            }
+                              
+
+                            if (lista[i].CPU == 0)
+                            {
+                                Console.WriteLine("El proceso " + lista[i].Nombre + " se ha terminado");
+                                pro = lista[i];
+                                pro.Estado = "Terminado";
+
+                                lista.RemoveAt(i);
+                                procesoTerminado = true;
+
+                                resultlista.Add(new PROCESS
+                                {
+                                    ID = pro.ID,
+                                    Nombre = pro.Nombre,
+                                    CPU = pro.CPU,
+                                    Prioridad = pro.Prioridad,
+                                    TiLLegada = pro.TiLLegada,
+                                    Estado = pro.Estado,
+                                });
+                            }
+                            break;
+                        }
+                    }
+                }
+
+                if (lista.Count == 0)
+                    finIteraciones = true;
+
+            }
+        }
+        internal void ColasMultiples(int Quantum)
+        {
+            // hay que llenar listas por prioridades, solo busca cual es la prioridad mayor para saber cuantas listas debe hacer.
+            int PrioridadColas = 0;
+            foreach (PROCESS  i in lista)
+            {
+                if (PrioridadColas < i.Prioridad)
+                {
+                    PrioridadColas = (int)i.Prioridad;
+                    //Console.WriteLine(PrioridadColas);
+                }
+
+            }
+            //  Console.WriteLine(PrioridadColas);
+
+            while (PrioridadColas > 0)
+            {
+
+                List<PROCESS> tempLista = new List<PROCESS>();
+                foreach (PROCESS i in lista)
+                {
+                    if (i.Prioridad == PrioridadColas)
+                    {
+                        tempLista.Add(i);
+                    }
+                }
+                Console.WriteLine("Cola " + PrioridadColas);
+
+                if (tempLista.Count != 0)
+                {
+                     //Prioridad(tempLista,Quantum);
+                    /*foreach(Proceso i in tempLista)
+                    {
+                        Console.WriteLine (i.getNombre());
+                    }*/
+                }
+                else
+                {
+                    Console.WriteLine("No hay nada en lista" + PrioridadColas);
+                };
+
+                PrioridadColas--;
+                //Console.WriteLine(PrioridadColas+1);
+                tempLista.Clear();
+            }
+        }
+        internal void RR(List<PROCESS> ListaMC,int Quantum)
+        {
+            int quantum = Quantum, tiempoGlobal = 0, contadorQ = 0; //contadorQuantum
+            bool finIteraciones = false;
+            List<PROCESS> tempLista = new List<PROCESS>();
+
+            while (!finIteraciones)
+            {
+                for (int i = 0; i < ListaMC.Count; i++)
+                {
+                    if (ListaMC[i].TiLLegada == tiempoGlobal)
+                    {
+                        Console.WriteLine("Insertando proceso: " + ListaMC[i].Nombre + " tiempo " + tiempoGlobal);//tiene que ser diferente tiempo de llegada si no se salta uno
+                        tempLista.Add(ListaMC[i]);
+                        ListaMC.RemoveAt(i);
+                    }
+                }
+                foreach (var item in ListaMC)
+                {
+                    Console.WriteLine(""+ item.Nombre); 
+                }
+                if (contadorQ == tempLista[0].CPU)
+                {
+                    Console.WriteLine("Proceso terminado: " + tempLista[0].Nombre + " tiempo: " + tiempoGlobal);
+
+                    tempLista.RemoveAt(0);
+                    contadorQ = 0;
+                }
+                else if (contadorQ - quantum == 0)
+                {
+                    Console.WriteLine("Ejecutando CPU proceso: " + tempLista[0].Nombre + " tiempo: " + tiempoGlobal);
+                    tempLista[0].CPU=(tempLista[0].CPU - quantum);
+                    Console.WriteLine("CPU restante: " + tempLista[0].CPU);
+
+                    if (tempLista[0].CPU > quantum && tempLista[0].CPU != 0)
+                        Console.WriteLine("El proceso pasa a bloqueado");
+                    else if (tempLista[0].CPU != 0)
+                        Console.WriteLine("El proceso pasa a listo");
+
+                    tempLista.Add(tempLista[0]);
+                    tempLista.RemoveAt(0);
+                    contadorQ = 0;
+                }
+
+                tiempoGlobal++;
+                contadorQ++;
+
+
+                if (tempLista.Count == 0)
+                    finIteraciones = true;
+            }
+
+
+        }
+        private void Prioridad_I_CPU()
+        {
+            int tiempoGlobal = 0;
+            bool finIteraciones = false;
+            List<PROCESS> tempLista = new List<PROCESS>();
+
+            foreach (PROCESS proceso in lista)
+                tempLista.Add(new PROCESS(proceso.ID, proceso.Nombre, proceso.CPU, proceso.Prioridad, proceso.TiLLegada, proceso.Estado, proceso.AlgoCPU, proceso.probabilidad, proceso.Ticket));
+
+            for (int j = 0; j <= tempLista.Count - 2; j++)
+            {
+                for (int i = 0; i <= tempLista.Count - 2; i++)
+                {
+                    if (tempLista[i].Prioridad > tempLista[i + 1].Prioridad)
+                    {
+                        PROCESS temp = tempLista[i + 1];
+                        tempLista[i + 1] = tempLista[i];
+                        tempLista[i] = temp;
+                    }
+                }
+            }
+
+            PROCESS pro = tempLista[tempLista.Count - 1];
+
+            while (!finIteraciones)
+            {
+                for (int i = tempLista.Count - 1; i >= 0; i--)
+                {
+                    if (tempLista[i].Prioridad <= pro.Prioridad && tempLista[i].TiLLegada <= tiempoGlobal)
+                        pro = tempLista[i];
+                }
+
+                pro.CPU = pro.CPU - 1;
+                Console.WriteLine("Proceso: " + pro.Nombre + " CPU: " + pro.CPU);
+
+                if (pro.CPU == 0)
+                {
+                    Console.WriteLine("Ejecucion" +pro.Nombre);
+                    Console.WriteLine("Terminado "+ pro.Nombre);
+                    tempLista.Remove(pro);
+
+                    if (tempLista.Count != 0)
+                        pro = tempLista[tempLista.Count - 1];
+                }
+                else
+                {
+                    Console.WriteLine("Ejecucion" + pro.Nombre);
+                    Console.WriteLine("Listo" + pro.Nombre);
+                }
+                tiempoGlobal++;
+
+                finIteraciones = true;
+
+                if (tempLista.Count != 0)
+                    finIteraciones = false;
+            }
+        }
+
+
+
+
+
+
     }
+
+
+
+
+
+
+
     }
 

@@ -28,6 +28,8 @@ namespace Test_Algoritmos
         public Nullable<int> Prioridad { get; set; }
         public string Estado { get; set; }
         public double AlgoCPU { get; set; }
+        public double probabilidad { get; set; }
+        public double Ticket { get; set; }
     }
 
 }
