@@ -108,19 +108,19 @@ namespace Test_Algoritmos
 
         private void bntCPU_Click(object sender, EventArgs e)
         {
-            if (txtQuantumCPU.Text == "")
-            {
-                MessageBox.Show("Necesita digitar Quantum en este algoritmo");
+            //if (txtQuantumCPU.Text == "")
+            //{
+            //    MessageBox.Show("Necesita digitar Quantum en este algoritmo");
 
-            }
-            else
-            {
-                 algoritmos.CPU(int.Parse(txtQuantumCPU.Text));
-                dgvCPU.DataSource = algoritmos.GetLista();
-            }
-            algoritmos.ProcMasCortoContinuacion();
-            //algoritmos.RoundRobin(int.Parse(txtQuantumCPU.Text));
-            dgvCPU.DataSource = algoritmos.GetLista();
+            //}
+            //else
+            //{
+            //     algoritmos.CPU(int.Parse(txtQuantumCPU.Text));
+            //    dgvCPU.DataSource = algoritmos.GetLista();
+            //}
+            //algoritmos.ProcMasCortoContinuacion();
+            ////algoritmos.RoundRobin(int.Parse(txtQuantumCPU.Text));
+            //dgvCPU.DataSource = algoritmos.GetLista();
         }
 
         private void btn_RR_Click(object sender, EventArgs e)

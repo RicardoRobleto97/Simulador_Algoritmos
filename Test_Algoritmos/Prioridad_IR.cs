@@ -22,16 +22,10 @@ namespace Test_Algoritmos
 
         private void btn_prioridadIR_Click(object sender, EventArgs e)
         {
-            if(txtQuantum.Text == "")
-            {
-                MessageBox.Show("Necesita digitar Quantum en este algoritmo");
-
-            }
-            else
-            {
-                algoritmos.Prioridad(int.Parse(txtQuantum.Text));
+         
+                algoritmos.Prioridad_I_CPU();
                 dgvPrioridadIR_Result.DataSource = algoritmos.GetLista();
-            }
+            
         }
 
         private void Prioridad_IR_Load(object sender, EventArgs e)
@@ -39,6 +33,7 @@ namespace Test_Algoritmos
             dgvPrioridadIR_Result.DataSource = con.GetPROCESS();
             dgvPrioridadIR_Result.Columns[6].Visible = false;
             dgvPrioridadIR_Result.Columns[7].Visible = false;
+            dgvPrioridadIR_Result.Columns[8].Visible = false;
         }
     }
 }

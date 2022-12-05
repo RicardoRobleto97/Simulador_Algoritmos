@@ -76,9 +76,17 @@ namespace Test_Algoritmos
                 if (pro.CPU > quantum)
                 {
                     Console.WriteLine("Restando CPU a: " + pro.Nombre);
-                    pro.Estado = "Restando CPU";
+                    pro.Estado = "Ejecucion";
                     pro.CPU = (pro.CPU - quantum);
-
+                    resultlista.Add(new PROCESS
+                    {
+                        ID = pro.ID,
+                        Nombre = pro.Nombre,
+                        CPU = pro.CPU,
+                        Prioridad = pro.Prioridad,
+                        TiLLegada = pro.TiLLegada,
+                        Estado = pro.Estado,
+                    });
                     if (pro.CPU > quantum)
                     {
                         pro.Estado = "Bloqueado";
@@ -90,12 +98,23 @@ namespace Test_Algoritmos
                     {
                         Console.WriteLine("Proceso pasa a listo");
                         pro.Estado = "Listo";
+
                     }
 
 
                 }
                 else if (pro.CPU <= quantum)
                 {
+                    pro.Estado = "Ejecucion";
+                    resultlista.Add(new PROCESS
+                    {
+                        ID = pro.ID,
+                        Nombre = pro.Nombre,
+                        CPU = pro.CPU,
+                        Prioridad = pro.Prioridad,
+                        TiLLegada = pro.TiLLegada,
+                        Estado = pro.Estado,
+                    });
                     Console.WriteLine("Proceso terminado: " + pro.Nombre);
                     pro.CPU = (0);
                     pro.Estado = "Terminado";
@@ -867,14 +886,14 @@ namespace Test_Algoritmos
 
 
         }
-        private void Prioridad_I_CPU()
+        internal void Prioridad_I_CPU()
         {
             int tiempoGlobal = 0;
             bool finIteraciones = false;
             List<PROCESS> tempLista = new List<PROCESS>();
 
             foreach (PROCESS proceso in lista)
-                tempLista.Add(new PROCESS(proceso.ID, proceso.Nombre, proceso.CPU, proceso.Prioridad, proceso.TiLLegada, proceso.Estado, proceso.AlgoCPU, proceso.probabilidad, proceso.Ticket));
+                tempLista.Add(new PROCESS(proceso.Nombre, proceso.CPU,proceso.Prioridad, proceso.TiLLegada));
 
             for (int j = 0; j <= tempLista.Count - 2; j++)
             {
@@ -905,16 +924,71 @@ namespace Test_Algoritmos
                 if (pro.CPU == 0)
                 {
                     Console.WriteLine("Ejecucion" +pro.Nombre);
+                    pro.Estado = "Ejecucion";
+                    resultlista.Add(new PROCESS
+                    {
+                        ID = pro.ID,
+                        Nombre = pro.Nombre,
+                        CPU = pro.CPU,
+                        Prioridad = pro.Prioridad,
+                        TiLLegada = pro.TiLLegada,
+                        Estado = pro.Estado,
+                    });
                     Console.WriteLine("Terminado "+ pro.Nombre);
+                    pro.Estado = "Terminado";
+                    resultlista.Add(new PROCESS
+                    {
+                        ID = pro.ID,
+                        Nombre = pro.Nombre,
+                        CPU = pro.CPU,
+                        Prioridad = pro.Prioridad,
+                        TiLLegada = pro.TiLLegada,
+                        Estado = pro.Estado,
+                    });
                     tempLista.Remove(pro);
 
-                    if (tempLista.Count != 0)
+                    if (tempLista.Count != 0) 
+                    { 
                         pro = tempLista[tempLista.Count - 1];
+                        resultlista.Add(new PROCESS
+                        {
+                            ID = pro.ID,
+                            Nombre = pro.Nombre,
+                            CPU = pro.CPU,
+                            Prioridad = pro.Prioridad,
+                            TiLLegada = pro.TiLLegada,
+                            Estado = pro.Estado,
+                        });
+
+                    }
+                       
                 }
                 else
                 {
                     Console.WriteLine("Ejecucion" + pro.Nombre);
+                    pro.Estado = "Ejecucion";
+                    resultlista.Add(new PROCESS
+                    {
+                        ID = pro.ID,
+                        Nombre = pro.Nombre,
+                        CPU = pro.CPU,
+                        Prioridad = pro.Prioridad,
+                        TiLLegada = pro.TiLLegada,
+                        Estado = pro.Estado,
+                    });
+
                     Console.WriteLine("Listo" + pro.Nombre);
+                    pro.Estado = "Listo";
+
+                    resultlista.Add(new PROCESS
+                    {
+                        ID = pro.ID,
+                        Nombre = pro.Nombre,
+                        CPU = pro.CPU,
+                        Prioridad = pro.Prioridad,
+                        TiLLegada = pro.TiLLegada,
+                        Estado = pro.Estado,
+                    });
                 }
                 tiempoGlobal++;
 

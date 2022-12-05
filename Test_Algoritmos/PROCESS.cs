@@ -21,6 +21,16 @@ namespace Test_Algoritmos
             this.CPU = 0;
             this.AlgoCPU = 0.00;
         }
+        public PROCESS( string nombre, int? cPU, int? tiLLegada, int? prioridad)
+        {
+      
+            Nombre = nombre;
+            CPU = cPU;
+            TiLLegada = tiLLegada;
+            Prioridad = prioridad;
+           
+        }
+
         public int ID { get; set; }
         public string Nombre { get; set; }
         public Nullable<int> CPU { get; set; }

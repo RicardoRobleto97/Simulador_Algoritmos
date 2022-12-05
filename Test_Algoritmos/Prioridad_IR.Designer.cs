@@ -28,13 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Label label1;
             this.pnlPriority = new System.Windows.Forms.Panel();
             this.btn_prioridadIR = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvPrioridadIR_Result = new System.Windows.Forms.DataGridView();
-            this.txtQuantum = new System.Windows.Forms.TextBox();
-            label1 = new System.Windows.Forms.Label();
             this.pnlPriority.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrioridadIR_Result)).BeginInit();
             this.SuspendLayout();
@@ -45,9 +42,7 @@
             this.pnlPriority.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlPriority.Controls.Add(this.btn_prioridadIR);
             this.pnlPriority.Controls.Add(this.label4);
-            this.pnlPriority.Controls.Add(label1);
             this.pnlPriority.Controls.Add(this.dgvPrioridadIR_Result);
-            this.pnlPriority.Controls.Add(this.txtQuantum);
             this.pnlPriority.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlPriority.Location = new System.Drawing.Point(0, 0);
             this.pnlPriority.Name = "pnlPriority";
@@ -84,17 +79,6 @@
             this.label4.Text = "Tabla Resultado Prioridad";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label1.ForeColor = System.Drawing.Color.White;
-            label1.Location = new System.Drawing.Point(16, 46);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(107, 27);
-            label1.TabIndex = 12;
-            label1.Text = "Quantum";
-            // 
             // dgvPrioridadIR_Result
             // 
             this.dgvPrioridadIR_Result.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -104,13 +88,6 @@
             this.dgvPrioridadIR_Result.RowTemplate.Height = 24;
             this.dgvPrioridadIR_Result.Size = new System.Drawing.Size(807, 353);
             this.dgvPrioridadIR_Result.TabIndex = 11;
-            // 
-            // txtQuantum
-            // 
-            this.txtQuantum.Location = new System.Drawing.Point(129, 51);
-            this.txtQuantum.Name = "txtQuantum";
-            this.txtQuantum.Size = new System.Drawing.Size(64, 22);
-            this.txtQuantum.TabIndex = 9;
             // 
             // Prioridad_IR
             // 
@@ -134,6 +111,5 @@
         private System.Windows.Forms.Button btn_prioridadIR;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dgvPrioridadIR_Result;
-        private System.Windows.Forms.TextBox txtQuantum;
     }
 }
